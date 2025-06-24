@@ -1,0 +1,416 @@
+use KEC
+switched to db KEC
+db.createCollection("User")
+{ ok: 1 }
+db.User.insertOne({
+name:"Rithiha",
+email:"rithihasri17@gmail.com",
+age:"19",
+dept:"EIE"
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685a26992c8465cc6556a744')
+}
+db.User.insertMany([{
+name:"Veena",email:"veena@gmail.com",age:"19"
+}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2d2d2c8465cc6556a745')
+  }
+}
+db.User.insertMany([{
+name:"Suhi",email:"suhi@gmail.com",age:"19"},
+{name:"A",email:"a@gmail.com",age:"17"},
+{name:"B",email:"b@gmail.com",age:"18"},{
+name:"C",email:"c@gmail.com",age:"19"},{
+name:"D",email:"d@gmail.com",age:"20"},{
+name:"E",email:"e@gmail.com",age:"21"},{
+name:"F",email:"f@gmail.com",age:"22"},{
+name:"G",email:"g@gmail.com",age:"23"},{
+name:"X",email:"x@gmail.com",age:"24"},{
+name:"Y",email:"y@gmail.com",age:"25"},{
+name:"Z",email:"z@gmail.com",age:"26"}
+}])
+SyntaxError: Unexpected token, expected "," (13:0)
+
+[0m [90m 11 |[39m name[33m:[39m[32m"Y"[39m[33m,[39memail[33m:[39m[32m"y@gmail.com"[39m[33m,[39mage[33m:[39m[32m"25"[39m}[33m,[39m{
+ [90m 12 |[39m name[33m:[39m[32m"Z"[39m[33m,[39memail[33m:[39m[32m"z@gmail.com"[39m[33m,[39mage[33m:[39m[32m"26"[39m}
+[31m[1m>[22m[39m[90m 13 |[39m }])
+ [90m    |[39m [31m[1m^[22m[39m[0m
+db.User.insertMany([{
+name:"Suhi",email:"suhi@gmail.com",age:"19"},
+{name:"A",email:"a@gmail.com",age:"17"},
+{name:"B",email:"b@gmail.com",age:"18"},{
+name:"C",email:"c@gmail.com",age:"19"},{
+name:"D",email:"d@gmail.com",age:"20"},{
+name:"E",email:"e@gmail.com",age:"21"},{
+name:"F",email:"f@gmail.com",age:"22"},{
+name:"G",email:"g@gmail.com",age:"23"},{
+name:"X",email:"x@gmail.com",age:"24"},{
+name:"Y",email:"y@gmail.com",age:"25"},{
+name:"Z",email:"z@gmail.com",age:"26"}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a35d62c8465cc6556a746'),
+    '1': ObjectId('685a35d62c8465cc6556a747'),
+    '2': ObjectId('685a35d62c8465cc6556a748'),
+    '3': ObjectId('685a35d62c8465cc6556a749'),
+    '4': ObjectId('685a35d62c8465cc6556a74a'),
+    '5': ObjectId('685a35d62c8465cc6556a74b'),
+    '6': ObjectId('685a35d62c8465cc6556a74c'),
+    '7': ObjectId('685a35d62c8465cc6556a74d'),
+    '8': ObjectId('685a35d62c8465cc6556a74e'),
+    '9': ObjectId('685a35d62c8465cc6556a74f'),
+    '10': ObjectId('685a35d62c8465cc6556a750')
+  }
+}
+db.User.find()
+{
+  _id: ObjectId('685a26992c8465cc6556a744'),
+  name: 'Rithiha',
+  email: 'rithihasri17@gmail.com',
+  age: '19',
+  dept: 'EIE'
+}
+{
+  _id: ObjectId('685a2d2d2c8465cc6556a745'),
+  name: 'Veena',
+  email: 'veena@gmail.com',
+  age: '19'
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a746'),
+  name: 'Suhi',
+  email: 'suhi@gmail.com',
+  age: '19'
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a747'),
+  name: 'A',
+  email: 'a@gmail.com',
+  age: '17'
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a748'),
+  name: 'B',
+  email: 'b@gmail.com',
+  age: '18'
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a749'),
+  name: 'C',
+  email: 'c@gmail.com',
+  age: '19'
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74a'),
+  name: 'D',
+  email: 'd@gmail.com',
+  age: '20'
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74b'),
+  name: 'E',
+  email: 'e@gmail.com',
+  age: '21'
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74c'),
+  name: 'F',
+  email: 'f@gmail.com',
+  age: '22'
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74d'),
+  name: 'G',
+  email: 'g@gmail.com',
+  age: '23'
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74e'),
+  name: 'X',
+  email: 'x@gmail.com',
+  age: '24'
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74f'),
+  name: 'Y',
+  email: 'y@gmail.com',
+  age: '25'
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a750'),
+  name: 'Z',
+  email: 'z@gmail.com',
+  age: '26'
+}
+db.User.findOne()
+{
+  _id: ObjectId('685a26992c8465cc6556a744'),
+  name: 'Rithiha',
+  email: 'rithihasri17@gmail.com',
+  age: '19',
+  dept: 'EIE'
+}
+db.User.find({name:"Veena"})
+{
+  _id: ObjectId('685a2d2d2c8465cc6556a745'),
+  name: 'Veena',
+  email: 'veena@gmail.com',
+  age: '19'
+}
+db.User.updateOne({name:"F"},{$set:{age:27}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.find({name:"F"})
+{
+  _id: ObjectId('685a35d62c8465cc6556a74c'),
+  name: 'F',
+  email: 'f@gmail.com',
+  age: 27
+}
+db.User.updateOne({name:"C"},{$set:{name:"Dharshini"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.find({name:"Dharshini"})
+{
+  _id: ObjectId('685a35d62c8465cc6556a749'),
+  name: 'Dharshini',
+  email: 'c@gmail.com',
+  age: '19'
+}
+db.User.updateOne({name:"Dharshini"},{$set:{email:"dharshini@gmail.com"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.findOne({email:"dharshini@gmail.com"})
+{
+  _id: ObjectId('685a35d62c8465cc6556a749'),
+  name: 'Dharshini',
+  email: 'dharshini@gmail.com',
+  age: '19'
+}
+db.User.updateMany({age:'19'},{$set:{age:19}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 4,
+  modifiedCount: 4,
+  upsertedCount: 0
+}
+db.User.updateMany({},{$set{phone:""}})
+SyntaxError: Unexpected token, expected "," (1:27)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mUser[39m[33m.[39mupdateMany({}[33m,[39m{$set{phone[33m:[39m[32m""[39m}})
+ [90m   |[39m                            [31m[1m^[22m[39m[0m
+db.User.updateMany({},{$set:{phone:""}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 13,
+  modifiedCount: 13,
+  upsertedCount: 0
+}
+db.User.find()
+{
+  _id: ObjectId('685a26992c8465cc6556a744'),
+  name: 'Rithiha',
+  email: 'rithihasri17@gmail.com',
+  age: 19,
+  dept: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2d2d2c8465cc6556a745'),
+  name: 'Veena',
+  email: 'veena@gmail.com',
+  age: 19,
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a746'),
+  name: 'Suhi',
+  email: 'suhi@gmail.com',
+  age: 19,
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a747'),
+  name: 'A',
+  email: 'a@gmail.com',
+  age: '17',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a748'),
+  name: 'B',
+  email: 'b@gmail.com',
+  age: '18',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a749'),
+  name: 'Dharshini',
+  email: 'dharshini@gmail.com',
+  age: 19,
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74a'),
+  name: 'D',
+  email: 'd@gmail.com',
+  age: '20',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74b'),
+  name: 'E',
+  email: 'e@gmail.com',
+  age: '21',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74c'),
+  name: 'F',
+  email: 'f@gmail.com',
+  age: 27,
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74d'),
+  name: 'G',
+  email: 'g@gmail.com',
+  age: '23',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74e'),
+  name: 'X',
+  email: 'x@gmail.com',
+  age: '24',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74f'),
+  name: 'Y',
+  email: 'y@gmail.com',
+  age: '25',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a750'),
+  name: 'Z',
+  email: 'z@gmail.com',
+  age: '26',
+  phone: ''
+}
+db.User.deleteOne({name:'D'})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.User.find()
+{
+  _id: ObjectId('685a26992c8465cc6556a744'),
+  name: 'Rithiha',
+  email: 'rithihasri17@gmail.com',
+  age: 19,
+  dept: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2d2d2c8465cc6556a745'),
+  name: 'Veena',
+  email: 'veena@gmail.com',
+  age: 19,
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a746'),
+  name: 'Suhi',
+  email: 'suhi@gmail.com',
+  age: 19,
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a747'),
+  name: 'A',
+  email: 'a@gmail.com',
+  age: '17',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a748'),
+  name: 'B',
+  email: 'b@gmail.com',
+  age: '18',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a749'),
+  name: 'Dharshini',
+  email: 'dharshini@gmail.com',
+  age: 19,
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74b'),
+  name: 'E',
+  email: 'e@gmail.com',
+  age: '21',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74c'),
+  name: 'F',
+  email: 'f@gmail.com',
+  age: 27,
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74d'),
+  name: 'G',
+  email: 'g@gmail.com',
+  age: '23',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74e'),
+  name: 'X',
+  email: 'x@gmail.com',
+  age: '24',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a74f'),
+  name: 'Y',
+  email: 'y@gmail.com',
+  age: '25',
+  phone: ''
+}
+{
+  _id: ObjectId('685a35d62c8465cc6556a750'),
+  name: 'Z',
+  email: 'z@gmail.com',
+  age: '26',
+  phone: ''
+}
